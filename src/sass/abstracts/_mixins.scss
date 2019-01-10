@@ -1,0 +1,32 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint) {
+  @each $name, $value in $breakpoints-max {
+    @if $name == $breakpoint {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+
+  @each $name, $value in $breakpoints-min {
+    @if $name == $breakpoint {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@function float-col-width($n, $of) {
+  @return calc(
+    #{($n - 1) * $gutter-horizontal} + #{$n} * ((
+            100% - #{($of - 1) * $gutter-horizontal}
+          ) / #{$of})
+  );
+}
+
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  @for $of-i from 2 through $grid-size {
+    @for $n-j from 1 through ($of-i - 1) {
+      .col-#{$n-j}-of-#{$of-i} {
+        width: float-col-width($n-j, $of-i);
+      }
+    }
+  }
+}

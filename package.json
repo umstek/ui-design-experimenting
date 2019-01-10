@@ -1,0 +1,24 @@
+{
+  "name": "ui-design-experimenting",
+  "version": "0.1.0",
+  "description": "Experimenting on UI design",
+  "main": "src/index.html",
+  "license": "MIT",
+  "scripts": {
+    "prestart": "yarn clean",
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html",
+    "clean": "rimraf .cache dist"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.15.2",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}

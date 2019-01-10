@@ -1,0 +1,15 @@
+:root {
+  font-size: 62.5%;
+
+  @include respond(tab-l) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-p) {
+    font-size: 50%;
+  }
+
+  @include respond(desktop-l) {
+    font-size: 75%;
+  }
+}
